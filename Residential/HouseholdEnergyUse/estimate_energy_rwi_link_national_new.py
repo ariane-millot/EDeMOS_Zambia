@@ -3,11 +3,15 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
 import pathlib
-import seaborn as sns
+#import seaborn as sns
 from scipy.stats import norm
 from scipy.interpolate import griddata
 from scipy.optimize import curve_fit
 
+#palette = sns.color_palette() # This was having issues with the color palette
+
+# Get Matplotlib default colors
+palette = plt.rcParams['axes.prop_cycle'].by_key()['color']
 
 # Define probability distribution for selection of simulated subgroups of households from survey
 def selection_window(x, x0, s, c):
@@ -179,7 +183,7 @@ def estimate_energy_rwi_link_national(grid, data_folder, figures_folder):
                         'Groups of households for each hexagon cell',
                         'Simulated groups of survey households selected to\nmatch relative wealth index and access rate of each cell']
             legend_fontsize = 8
-            palette = sns.color_palette()
+            #palette = sns.color_palette()
             suffix = '' # default suffix of figure png filename
 
             # Create figure
@@ -225,14 +229,14 @@ def estimate_energy_rwi_link_national(grid, data_folder, figures_folder):
                 ax2.set_ylabel('% with electricity access')
                 ax2.set_ylim(0,1)
                 # Plot a scatter plot of rwi vs. y value for survey households from DHS data
-                ax2.scatter(rwi_grid, f_elec, marker='s', alpha=al, c=[palette[4]], edgecolors='None',
+                ax2.scatter(rwi_grid, f_elec, marker='s', alpha=al, c=palette[4], edgecolors='None',
                         label=labels[1])
                 y_group = f_group
             else:
                 y_value = 'energy_use'
                 ax2.set_ylabel('Household annual\nelectricity consumption (kWh)')
                 ax2.set_ylim(yl)
-                ax2.scatter(rwi_DHS, eu, s=w*15, alpha=al, c=[palette[0]], edgecolors='None', label=labels[0])
+                ax2.scatter(rwi_DHS, eu, s=w*15, alpha=al, c=palette[0], edgecolors='None', label=labels[0])
                 ax2.get_yaxis().set_major_formatter(
                     matplotlib.ticker.FuncFormatter(lambda x, p: format(int(x), ',')))
                 y_group = eu_group
@@ -256,9 +260,9 @@ def estimate_energy_rwi_link_national(grid, data_folder, figures_folder):
                     legend_loc[0] = 'upper right'
             # Plot mean rwi and mean y value of the simulated groups
             if simulate_cell_groups:
-                ax2.scatter(rwi_group, y_group, marker='d', alpha=al, c=[palette[1]], edgecolors='None',
+                ax2.scatter(rwi_group, y_group, marker='d', alpha=al, c=palette[1], edgecolors='None',
                         label=labels[2])
-            ax2.legend(loc=legend_loc[i],fontsize=legend_fontsize)
+            ax2.legend(loc='best',fontsize=legend_fontsize)
 
             outfile = 'rwi_vs_'+y_value+'_'+suffix+region_type[i].lower()+'.png'
             pathlib.Path(figures_folder).mkdir(exist_ok=True)
@@ -281,4 +285,3 @@ if __name__ == "__main__":
 
     estimate_energy_rwi_link_national(grid, data_folder, figures_folder)
     grid.to_csv(infile,index=False)
-

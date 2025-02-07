@@ -1,7 +1,8 @@
+#%%
 from pandas import read_csv
 import numpy as np
 
-
+#%%
 # Update the household_data file based on information in appliance_energy_use.csv
 def compute_energy_perhh_DHS(elas=0.4, nominal_household_size=4, data_folder='../Data/DHSSurvey/'):
 
@@ -26,7 +27,7 @@ def compute_energy_perhh_DHS(elas=0.4, nominal_household_size=4, data_folder='..
     energy_use = np.zeros(Nh)
 
     # Create array to give the mapping between appliance usage and tier
-    tier = np.array([0, 0, 0, 1, 2, 2, 3, 4])
+tier = np.array([0, 1, 3, 3, 4, 4])
 
     # Create filter to avoid including houses that don't even have electricity
     has_electricity = appliance_use[:, 0] > 0

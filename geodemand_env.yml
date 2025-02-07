@@ -1,4 +1,4 @@
-name: geospatial_env_kepler
+name: geodemand
 channels:
   - plotly
   - anaconda
@@ -27,4 +27,3 @@ dependencies:
     - h3pandas
     - matplotlib-scalebar
     - seaborn
-prefix: C:\Users\amillot\anaconda3\envs\geospatial_env_kepler
