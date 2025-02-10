@@ -11,7 +11,7 @@ conda env create -f environment.yml
 ## Useful data sets
 
 1. Transmission lines 220 kV, 132 kV, others.
-[Kenya electricity network](#https://energydata.info/dataset/kenya-kenya-electricity-network)
+[Kenya electricity network](https://energydata.info/dataset/kenya-kenya-electricity-network)
 2. Kenya Population and Housing Census 2019. [KNBS, 2019](https://open.africa/dataset/2019-kenya-population-and-housing-census).
 3. Demographic and Health Surveys (DHS). [DHS](https://dhsprogram.com/data/dataset/Kenya_Standard-DHS_2022.cfm)
 4. A high-resolution gridded dataset to assess electrification in sub-Saharan Africa [^1].
