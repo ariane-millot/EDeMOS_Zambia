@@ -1,11 +1,48 @@
-﻿Regions census Zambia,Regions GADM
-Copperbelt,Copperbelt
-Muchinga,Muchinga
-North western,North-Western
-Western,Western
-Luapula,Luapula
-Northern,Northern
-Central,Central
-Southern,Southern
-Eastern,Eastern
-Lusaka,Lusaka
+Regions census Kenya,Regions GADM,,test,,,
+Baringo,Baringo,,Baringo,TRUE,,Mombasa
+Bomet,Bomet,,Bomet,TRUE,,Kwale
+Bungoma,Bungoma,,Bungoma,TRUE,,Kilifi
+Busia,Busia,,Busia,TRUE,,Tana River
+Elgeyo-Marakwet,Elgeyo-Marakwet,,Elgeyo-Marakwet,TRUE,,Lamu
+Embu,Embu,,Embu,TRUE,,Taita Taveta
+Garissa,Garissa,,Garissa,TRUE,,Garissa
+Homa Bay,Homa Bay,,Homa Bay,TRUE,,Wajir
+Isiolo,Isiolo,,Isiolo,TRUE,,Mandera
+Kajiado,Kajiado,,Kajiado,TRUE,,Marsabit
+Kakamega,Kakamega,,Kakamega,TRUE,,Isiolo
+Kericho,Kericho,,Kericho,TRUE,,Meru
+Kiambu,Kiambu,,Kiambu,TRUE,,Tharaka-Nithi
+Kilifi,Kilifi,,Kilifi,TRUE,,Embu
+Kirinyaga,Kirinyaga,,Kirinyaga,TRUE,,Kitui
+Kisii,Kisii,,Kisii,TRUE,,Machakos
+Kisumu,Kisumu,,Kisumu,TRUE,,Makueni
+Kitui,Kitui,,Kitui,TRUE,,Nyandarua
+Kwale,Kwale,,Kwale,TRUE,,Nyeri
+Laikipia,Laikipia,,Laikipia,TRUE,,Kirinyaga
+Lamu,Lamu,,Lamu,TRUE,,Murang'a
+Machakos,Machakos,,Machakos,TRUE,,Kiambu
+Makueni,Makueni,,Makueni,TRUE,,Turkana
+Mandera,Mandera,,Mandera,TRUE,,West Pokot
+Marsabit,Marsabit,,Marsabit,TRUE,,Samburu
+Meru,Meru,,Meru,TRUE,,Trans Nzoia
+Migori,Migori,,Migori,TRUE,,Uasin Gishu
+Mombasa,Mombasa,,Mombasa,TRUE,,Elgeyo-Marakwet
+Murang'a,Murang'a,,Murang'a,TRUE,,Nandi
+Nairobi,Nairobi,,Nairobi,TRUE,,Baringo
+Nakuru,Nakuru,,Nakuru,TRUE,,Laikipia
+Nandi,Nandi,,Nandi,TRUE,,Nakuru
+Narok,Narok,,Narok,TRUE,,Narok
+Nyamira,Nyamira,,Nyamira,TRUE,,Kajiado
+Nyandarua,Nyandarua,,Nyandarua,TRUE,,Kericho
+Nyeri,Nyeri,,Nyeri,TRUE,,Bomet
+Samburu,Samburu,,Samburu,TRUE,,Kakamega
+Siaya,Siaya,,Siaya,TRUE,,Vihiga
+Taita Taveta,Taita Taveta,,Taita-Taveta,FALSE,,Bungoma
+Tana River,Tana River,,Tana River,TRUE,,Busia
+Tharaka-Nithi,Tharaka-Nithi,,Tharaka-Nithi,TRUE,,Siaya
+Trans Nzoia,Trans Nzoia,,Trans Nzoia,TRUE,,Kisumu
+Turkana,Turkana,,Turkana,TRUE,,Homa Bay
+Uasin Gishu,Uasin Gishu,,Uasin Gishu,TRUE,,Migori
+Vihiga,Vihiga,,Vihiga,TRUE,,Kisii
+Wajir,Wajir,,Wajir,TRUE,,Nyamira
+West Pokot,West Pokot,,West Pokot,TRUE,,Nairobi
