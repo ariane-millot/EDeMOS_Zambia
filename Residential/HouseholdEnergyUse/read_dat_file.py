@@ -1,3 +1,5 @@
+#%%
+import pandas as pd
 from pandas import read_fwf
 import numpy as np
 
@@ -5,15 +7,34 @@ import numpy as np
 # https://dhsprogram.com/data/dataset/Zambia_Standard-DHS_2018.cfm
 # and then outputs selected columns to a csv file
 
+#%%
+
 # Folder where data files are located
 data_folder = '../Data/DHSSurvey/'
 
 # Choose the file prefix.
-filename = 'ZMHR71FL'
+filename = 'KEHR8CFL'
+
+# Full path to the Stata file
+stata_file = f"{data_folder}{filename}.dta"
+
+# Read the Stata file using pandas
+df = pd.read_stata(stata_file)
+
+# Print the first few rows of the dataframe to inspect the data
+print(df.head())
+
+# Print the number of columns in the dataframe
+print(f"Number of columns: {df.shape[1]}")
+
+
+#%%
 
 # N is the number of columns in the file.
 # This currently needs to be found before running this script by inspecting the files in a text editor
-N = 167
+N = df.shape[1]
+
+#%%
 
 # Read the .DCT file which specifies which characters of the .DAT file encode which columns
 # replace - with 3 spaces in the .dct file before running the code
@@ -23,18 +44,25 @@ print('Read .dct file: shape =', dct.shape)
 do = read_fwf(data_folder+filename+'.DO', skiprows=2, header=None, nrows=N)
 print('Read .do file: shape =', do.shape)
 
+#%%
 # Append the column names to the character positions
 dct = dct.merge(do,left_on=1,right_on=2,how='left')
 
+#%%
 # Make array of column names
-cols = np.array(dct[dct.columns[[4, 5]]])
+#cols = np.array(dct[dct.columns[[4, 5]]]) original
+cols = np.array(dct[dct.columns[[6, 7]]])
+
+#%%
 
 # Reduce the character positions by 1 because python starts counting from 0 (not from 1).
 cols[:, 0]-=1
+#%%
 
 # Now read .DAT file containing encoded data
 data = read_fwf(data_folder+filename+'.DAT',header=None, colspecs=list(map(tuple,cols)))
 
+#%%
 # Get rid of any duplicated quotation marks in column names
 data.columns = np.char.strip(dct.iloc[:,-1].to_numpy(str),'"')
 
